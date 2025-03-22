@@ -1,7 +1,6 @@
 "use client"
 interface WindowProps{
 title:string;
-children:React.ReactNode;
 defaultPosition:{top:number;left:number};
 w:number;
 h:number;
@@ -16,7 +15,7 @@ const Window:React.FC<WindowProps>=({title,children,defaultPosition,w,h})=>{
 
 const [position,setPosition]=useState({top : defaultPosition.top,left: defaultPosition.left})
 const [size,setSize]=useState({width:w,height:h});
-const [isDragging,setDragging]=useState(false)
+
 const[highestZ,setHighestZ]=useState(1);
 const windowRef= useRef<HTMLDivElement>(null);
 const handleMouseDown = (e: React.MouseEvent) => {
