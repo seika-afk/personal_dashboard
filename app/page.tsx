@@ -83,7 +83,7 @@ setContact(true)
 
 <Window title="💡Working On" defaultPosition={{ top: 450, left: 800 }} w={300} h={180}>
   <div className="p-3">
-    <p>📖 Book: "Coding"</p>
+    <p>📖 Book[&quot;Coding&quot;]</p>
     <p>🧠 Deep Learning - Studying</p>
     <p>🤖 Machine Learning Projects</p>
     <p>⚡ Leet Coding</p>
