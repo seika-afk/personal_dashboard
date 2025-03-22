@@ -12,7 +12,6 @@ import React, { useState, useRef } from "react";
 const Window: React.FC<WindowProps> = ({ title, children, defaultPosition, w, h }) => {
   const [position, setPosition] = useState({ top: defaultPosition.top, left: defaultPosition.left });
   const [size, setSize] = useState({ width: w, height: h });
-  const [isDragging, setDragging] = useState(false);
   const [highestZ, setHighestZ] = useState(1);
   const windowRef = useRef<HTMLDivElement>(null);
 
