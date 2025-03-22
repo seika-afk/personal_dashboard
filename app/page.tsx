@@ -44,7 +44,8 @@ export default function Home() {
           <Window title="Intro" defaultPosition={{ top: 450, left: 200 }} w={450} h={180}>
             <p className="text-3xl font-extrabold my-3 tracking-wide drop-shadow-md">Gagan</p>
             <hr></hr>
-            <p className="text-lg italic my-3 text-gray-700">"Character is power"</p>
+   <p className="text-lg italic my-3 text-gray-700">&quot;Character is power&quot;</p>
+
           </Window>
         </div>
 
