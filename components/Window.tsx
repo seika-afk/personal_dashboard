@@ -17,7 +17,7 @@ const Window: React.FC<WindowProps> = ({ title, children, defaultPosition, w, h 
 
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
-    setDragging(true);
+
     setHighestZ((prev) => prev + 1); // Bring window to top
 
     const startX = e.clientX;
