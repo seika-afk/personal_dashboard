@@ -1,103 +1,116 @@
-import Image from "next/image";
+"use client"
+import Window from "@/components/Window"
+import { useState } from "react";
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const [contact,setContact]=useState(false)  
+  const cli_activate=()=>{
+setContact(true)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+
+  }
+  return (
+
+    // Page 1-> home
+<div className="  relative min-h-screen bg-cover p-3 bg-center" style={{ backgroundImage: "url('/pic1.jpg')" }}>
+  <div className="absolute inset-0 bg-black  opacity-40"></div> {/* Dark overlay */}
+
+{/* columns */}
+
+<div className=" anton relative z-10 text-white flex justify-center items-center flex-row gap-4">
+ 
+ {/* navbar */}
+  <div className="flex justify-center items-center w-1/7 h-screen">
+  <div className="w-[50px] flex flex-col gap-4 justify-center bg-[#2E66D2] h-[200px] p-2  border-4 border-black rounded-sm shadow-[6px_6px_0px_0px_black]">
+  <button className="cursor-pointer bg-white text-black border-2 border-black px-2 py-1  shadow-[3px_3px_0px_0px_black] transition-all duration-200 hover:shadow-none ">
+  
+    H
+  </button>
+    <button  className="cursor-pointer bg-white text-black border-2 border-black px-2 py-1   hover:shadow-[3px_3px_0px_0px_black] transition-all duration-200" onClick={cli_activate}>
+  
+    C
+  </button>
+  </div>
+
+  </div> 
+  <div className=" w-4/7 h-screen">
+  {/* skills box */}
+ 
+{/* window component ,parsing title ,content,default position */}
+<Window title="🔥 Skills" defaultPosition={{ top: 75, left: 200 }} w={450} h={300}>
+
+  <p className=" cursor-pointer my-2">💻 <b>Web Development</b></p>
+  <hr className="cursor-pointer border-black"></hr>
+
+  <p className="cursor-pointer my-2">🤖 <b>Machine Learning</b></p>
+  <hr className="border-black"></hr>
+
+  <p className="cursor-pointer my-2">🧠 <b>Deep Learning</b></p>
+  <hr className="border-black"></hr>
+
+  <p className="cursor-pointer my-2">📊 <b>Data Structures & Algorithms</b></p>
+
+</Window>
+
+
+<Window title="Intro" defaultPosition={{ top:450, left: 200 }} w={450} h={180}>
+  <p className="text-3xl font-extrabold my-3 tracking-wide drop-shadow-md">
+    Gagan
+  </p>
+  <hr></hr>
+  <p className="text-lg italic my-3 text-gray-700">"Character is power"</p>
+</Window>
+
+
+
+  </div>  
+  <div className=" w-3/7 h-screen">
+  
+  
+  
+  <Window title=" 🛠️Projects" defaultPosition={{ top: 75, left: 800 }} w={350} h={300}>
+  <p className="text-xl font-bold underline">Projects:</p>
+  <ul className="mt-2 space-y-2">
+    <li>🗄️ <strong>Database [C]</strong></li>
+    <li>📊 <strong>KNN from Scratch</strong></li>
+    <li>🌐 <strong>Quick-Stack [Full Stack]</strong></li>
+    <li>🚢 <strong>Can You Survive Titanic?</strong></li>
+    <li>📰 <strong>Fake News Prediction</strong></li>
+  </ul>
+</Window>
+
+<Window title="💡Working On" defaultPosition={{ top: 450, left: 800 }} w={300} h={180}>
+  <div className="p-3">
+    <p>📖 Book: "Coding"</p>
+    <p>🧠 Deep Learning - Studying</p>
+    <p>🤖 Machine Learning Projects</p>
+    <p>⚡ Leet Coding</p>
+  </div>
+</Window>
+{contact && (
+  <Window title="📬 Contact Me" defaultPosition={{ top: 200, left: 450 }} w={250} h={250}>
+    <div className="flex justify-center items-center flex-col gap-2 p-3">
+      <p>🐙 Github: <a href="https://github.com/seika-afk" target="_blank" className="text-blue-500">click</a></p>
+      <p>📧 Gmail: <a href="mailto:24bec036@nith.ac.in" className="text-blue-500">click</a></p>
     </div>
-  );
+  </Window>
+)}
+
+
+
+
+  </div>  {/* Medium */}
+</div>
+
+
+
+
+</div>
+
+
+
+
+     );
 }
